@@ -59,9 +59,10 @@ long rand(long m, long i, long c) {
 
 
 
+
+
 int main()
 {
-
     SetConsoleCP(1251);
     SetConsoleOutputCP(1251);
     int zadacha;
@@ -154,7 +155,70 @@ int main()
         cin >> c;
         cout << rand(m, i, c);
     }
-    if (zadacha ) {
+    if (zadacha == 5) {
+        string m[31][51];
+        for (int x = 0; x < 31; x++) {
+            for (int y = 0; y < 51; y++) {
+                m[x][y] = " ";
+            }
+        }
+        for (int y = 0; y < 51; y++) {
+            m[15][y] = "-";
+        }
+        for (int x = 0; x < 31; x++) {
+            m[x][25] = "|";
+        }
+        m[15][25] = "О";
+        for (int y = 0; y < 51; y++) {
+            for (int k = 0; k < 1; k++) {
+                int x = abs(sin(y / 3.99) * 10);
+                if (sin(y / 3.99) < 0) {
+                    x += 15 + k;
+                }
+                else {
+                    x = 15 - x - k;
+                }
+                m[x][y] = "O";
+
+            }
+        }
+        for (int i = 0; i < 31; i++) {
+            for (int j = 0; j < 51; j++) {
+                cout << m[i][j] << " ";
+            }
+            cout << "\n";
+        }
+
+        return 0;
+    }
+    if (zadacha == 9) {
+        int aMatrix[3][4] = { {5, 2, 0, 10}, 
+                              {3, 5, 2, 5}, 
+                              {20, 0, 0, 0} };
+        float bMatrix[4][2] = { {1.2, 0.5},
+                                {2.8, 0.4},
+                                {5, 1},
+                                {2, 1.5} };
+        float product[3][2] = { {0, 0},
+                                {0, 0},
+                                {0, 0} };
+
+        for (int row = 0; row < 3; row++) {
+            for (int col = 0; col < 2; col++) {
+                for (int inner = 0; inner < 2; inner++) {
+                    product[row][col] += aMatrix[row][inner] * bMatrix[inner][col];
+                }
+            }
+        }
+    }
+    if (zadacha == 9) {
+        int chislo, iz, v;
+        cout << "Введите число: ";
+        cin >> chislo;
+        cout << "Из какой системы слисления: ";
+        cin >> iz;
+        cout << "В какую систему счисления: ";
+        cin >> v;
 
     }
 }
